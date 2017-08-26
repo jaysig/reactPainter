@@ -1,0 +1,247 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className=""
+  style={
+    Object {
+      "margin-left": "10%",
+    }
+  }
+>
+  <div
+    id="roof"
+  >
+    <div
+      id="depth"
+      style={
+        Object {
+          "background": "repeating-linear-gradient(to right, black, black 50px, red 50px, red 100px)",
+          "border-radius": "10px 10px 0 0",
+          "height": "5em",
+          "line-height": "2em",
+          "margin-left": ".93%",
+          "text-align": "center",
+          "transform": "skewX(-15deg)",
+          "width": "600px",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "background": "repeating-linear-gradient(to right, black, black 50px, red 50px, red 100px)",
+          "height": "2em",
+          "line-height": "2em",
+          "position": "absolute",
+          "text-align": "center",
+          "transform": "translateZ(1em)",
+          "width": "600px",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "background": "url(\\"https://image.freepik.com/free-photo/brick-wall-texture-background_1137-89.jpg\\")",
+          "height": "30%",
+          "margin": "0 2%",
+          "width": "550px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "30",
+            "margin-top": "2%",
+          }
+        }
+      />
+      <div
+        className="row"
+        style={
+          Object {
+            "display": "flex",
+            "font-family": "Lato, sans-serif",
+            "justify-content": "space-between",
+            "margin": "10px",
+            "margin-left": "10%",
+            "width": "400px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "background": "#F6F6F6",
+              "border": "orange solid 2px",
+              "color": "black",
+              "height": "40px",
+              "padding": "1%",
+              "text-align": "center",
+              "width": "25%",
+            }
+          }
+        >
+          <p>
+            Paints
+          </p>
+        </div>
+        <div
+          style={
+            Object {
+              "background": "#F6F6F6",
+              "border": "orange solid 2px",
+              "color": "black",
+              "height": "40px",
+              "padding": "1%",
+              "text-align": "center",
+              "width": "25%",
+            }
+          }
+        >
+          <p>
+            Brushes
+          </p>
+        </div>
+        <div
+          style={
+            Object {
+              "background": "#F6F6F6",
+              "border": "orange solid 2px",
+              "color": "black",
+              "height": "40px",
+              "padding": "1%",
+              "text-align": "center",
+              "width": "25%",
+            }
+          }
+        >
+          <p>
+            Tape
+          </p>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "height": "30",
+            "margin-top": "2%",
+          }
+        }
+      />
+      <div
+        className="row"
+        style={
+          Object {
+            "display": "flex",
+            "font-family": "Lato, sans-serif",
+            "justify-content": "space-between",
+            "margin": "10px",
+            "margin-left": "10%",
+            "width": "400px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "background": "url(\\"http://dc428.4shared.com/img/-vayshJ-/s3/ClassDoor.png\\")",
+              "background-position": "center center",
+              "background-repeat": "no-repeat",
+              "color": "white",
+              "height": "250px",
+              "text-align": "center",
+              "width": "30%",
+            }
+          }
+        />
+        <div
+          style={
+            Object {
+              "background": "#F6F6F6",
+              "border": "orange solid 2px",
+              "color": "black",
+              "height": "75px",
+              "text-align": "center",
+              "width": "200px",
+            }
+          }
+        >
+          <h3>
+            George's Paint Shop
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "border": "solid black 2px",
+        "margin-left": "20%",
+        "text-align": "center",
+        "width": "300px",
+      }
+    }
+  >
+    <h4>
+      Now selling red paint
+    </h4>
+    <div>
+      <p>
+        Change Paint 
+        <select
+          id=""
+          name="paintChanger"
+          onChange={[Function]}
+        >
+          <option
+            value="red"
+          >
+            Red
+          </option>
+          <option
+            value="blue"
+          >
+            Blue
+          </option>
+          <option
+            value="yellow"
+          >
+            Yellow
+          </option>
+          <option
+            value="orange"
+          >
+            Orange
+          </option>
+          <option
+            value="purple"
+          >
+            Purple
+          </option>
+        </select>
+      </p>
+      <label
+        className="header"
+        htmlFor="owner"
+      >
+        Change Owner
+      </label>
+      <input
+        autoComplete="off"
+        id="owner"
+        label="Change Owner"
+        onChange={[Function]}
+        placeholder="Store Owner"
+        type="text"
+        value="George"
+      />
+    </div>
+  </div>
+</div>
+`;
