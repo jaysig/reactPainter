@@ -77,6 +77,10 @@ class PaintShop extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      owner: 'George'
+    }
+    this.handleChange = this.handleChange.bind(this);
     this.changePaint = this.changePaint.bind(this);
   }
 
@@ -84,13 +88,21 @@ class PaintShop extends Component {
     this.props.changeColor(event.target.value);
   }
 
+  handleChange(event) {
+  var value = event.target.value;
+
+  this.setState(function () {
+    return {
+      owner: value
+    }
+  });
+}
+
   render() {
     let time = moment().startOf('day').fromNow().split(" ")[0]
     time = parseInt(time);
-    console.log(7 > time);
-    console.log(time < 17);
     let timeOfDay = 7 < time && time < 17 ? daytime : nighttime;
-    console.log(timeOfDay,'tod');
+    let owner = this.state.owner;
     let color = this.props.color;
     return (
       <div className="" style={{'margin-left': '10%'}}>
@@ -139,7 +151,7 @@ class PaintShop extends Component {
             <div className="row" style={{...row,'display': 'flex'}}>
               <div style={door}></div>
               <div style={{...lWindow, ...timeOfDay}}>
-                <h3>George's Paint Shop</h3>
+                <h3>{`${owner}'s Paint Shop`}</h3>
               </div>
             </div>
           {/* {this.state.mentions.map((mention, i) => {
@@ -149,17 +161,39 @@ class PaintShop extends Component {
          } */}
          </div>
        </div>
-       <div className="update-mentions">
+       <div style={{
+         'margin-left': '20%',
+         border: 'solid black 2px',
+         'text-align': 'center',
+         width: '300px'
+       }}>
          <h4>{`Now selling ${color} paint`}</h4>
-         <button className="pending" onClick={this.updateMentions}> Change Paint</button>
-         <select
-           name="paintChanger"
-           id=""
-           onChange={this.changePaint}
-           >
-           <option value="red">Red</option>
-           <option value="blue">Blue</option>
-         </select>
+         {/* <button className="pending" onClick={this.updateMentions}> Change Paint</button> */}
+         <div>
+           <p>Change Paint <select
+             name="paintChanger"
+             id=""
+             onChange={this.changePaint}
+             >
+               <option value="red">Red</option>
+               <option value="blue">Blue</option>
+               <option value="yellow">Yellow</option>
+               <option value="orange">Orange</option>
+               <option value="purple">Purple</option>
+             </select></p>
+             <label htmlFor="owner" className="header">Change Owner</label>
+             <input
+              type="text"
+              label="Change Owner"
+              id="owner"
+              placeholder='Store Owner'
+              type="text"
+              autoComplete='off'
+              value={this.state.owner}
+              onChange={this.handleChange}
+            />
+
+         </div>
        </div>
        {/* <div className="cube" style={cube}>
          <div id="depth" style={{
