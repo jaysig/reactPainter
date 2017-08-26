@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-// import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import moment from 'moment';
-// import { Field, reduxForm } from 'redux-form'
-// import DropdownList from 'react-widgets/lib/DropdownList'
 import * as actions from '../actions/paints';
 
 const block = {
@@ -16,9 +13,6 @@ const block = {
 }
 
 const sign = {
-  // 'font-size': '3em',
-  // display: 'flex',
-  // 'justify-content': 'right',
   'margin-left': '30%',
   width: '40%',
   background: '#666',
@@ -60,7 +54,6 @@ const door = {
   'background-repeat': 'no-repeat',
   'background-position': 'center center',
   color: 'white',
-  // border: 'orange solid 2px',
   width: '30%',
   'text-align': 'center',
   height: '250px'
@@ -119,9 +112,7 @@ class PaintShop extends Component {
             'line-height': '2em',
             background: `repeating-linear-gradient(to right, black, black 50px, ${color} 50px, ${color} 100px)`
           }}>
-
           </div>
-          {/* <div style={{background: 'orange',height: '50px'}}></div> */}
           <div style={{
             ...block,
             transform: 'translateZ(1em)',
@@ -137,9 +128,6 @@ class PaintShop extends Component {
             width: '550px'
           }}>
             <div style={{height: '30', 'margin-top': '2%',}}>
-              {/* <div style={sign}>
-                <p><h1 style={{color: '#76FF03'}}>George's Paint Shop</h1></p>
-              </div> */}
             </div>
             <div className="row" style={{...row,'display': 'flex'}}>
               <div style={{...update, ...timeOfDay}}><p>Paints</p></div>
@@ -154,11 +142,6 @@ class PaintShop extends Component {
                 <h3>{`${owner}'s Paint Shop`}</h3>
               </div>
             </div>
-          {/* {this.state.mentions.map((mention, i) => {
-            return <Mention key={i} mention={mention} />
-            {color: '#76FF03'}
-            })
-         } */}
          </div>
        </div>
        <div style={{
@@ -168,7 +151,6 @@ class PaintShop extends Component {
          width: '300px'
        }}>
          <h4>{`Now selling ${color} paint`}</h4>
-         {/* <button className="pending" onClick={this.updateMentions}> Change Paint</button> */}
          <div>
            <p>Change Paint <select
              name="paintChanger"
@@ -195,22 +177,6 @@ class PaintShop extends Component {
 
          </div>
        </div>
-       {/* <div className="cube" style={cube}>
-         <div id="depth" style={{
-           ...block,
-           transform: 'rotateX(90deg) translateZ(1em)',
-           background: `repeating-linear-gradient(to right, white, white 50px, ${color} 50px, ${color} 100px)`
-         }}>
-            Top
-         </div>
-         <div style={{
-           ...block,
-           transform: 'translateZ(1em)',
-           background: `repeating-linear-gradient(to right, white, white 50px, ${color} 50px, ${color} 100px)`
-         }}>
-         Bottom
-         </div>
-       </div> */}
       </div>
     )
   }
