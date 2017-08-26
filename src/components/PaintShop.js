@@ -23,7 +23,7 @@ const cube = {
 }
 const row = {
   margin: '10px',
-  width: '300px',
+  width: '400px',
   'justify-content': 'space-between'
 }
 const update = {
@@ -33,6 +33,22 @@ const update = {
   width: '70px',
   'text-align': 'center',
   height: '20px'
+}
+const door = {
+  background: '#737272',
+  color: 'white',
+  border: 'orange solid 2px',
+  width: '70px',
+  'text-align': 'center',
+  height: '150px'
+}
+const lWindow = {
+  background: '#737272',
+  color: 'white',
+  border: 'orange solid 2px',
+  width: '200px',
+  'text-align': 'center',
+  height: '75px'
 }
 class PaintShop extends Component {
 
@@ -93,11 +109,25 @@ class PaintShop extends Component {
           </div> */}
 
 
-          <div style={{'margin-top': '5%'}}>
+          <div style={{
+            background: 'silver',
+            margin: '0 2%',
+            height: '30%',
+            width: '550px'
+          }}>
+            <div style={{height: '30', 'margin-top': '2%',}}>
+
+            </div>
             <div className="row" style={{...row,'display': 'flex'}}>
               <div style={update}>Paints</div>
               <div style={update}>Brushes</div>
               <div style={update}>Tape</div>
+            </div>
+            <div style={{height: '30', 'margin-top': '2%',}}>
+            </div>
+            <div className="row" style={{...row,'display': 'flex'}}>
+              <div style={door}>Brushes</div>
+              <div style={lWindow}>Tape</div>
             </div>
             <h4>{`Now selling ${color} paint`}</h4>
           <div className="update-mentions">
