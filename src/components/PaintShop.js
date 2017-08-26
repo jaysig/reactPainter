@@ -40,8 +40,14 @@ const row = {
   width: '400px',
   'justify-content': 'space-between'
 }
+const daytime = {
+  background: '#F6F6F6',
+  color: 'black'
+}
+const nighttime = {
+  background: '#111'
+}
 const update = {
-  background: '#737272',
   color: 'white',
   border: 'orange solid 2px',
   width: '25%',
@@ -50,12 +56,14 @@ const update = {
   height: '40px'
 }
 const door = {
-  background: '#737272',
+  background: 'url("http://dc428.4shared.com/img/-vayshJ-/s3/ClassDoor.png")',
+  'background-repeat': 'no-repeat',
+  'background-position': 'center center',
   color: 'white',
-  border: 'orange solid 2px',
-  width: '70px',
+  // border: 'orange solid 2px',
+  width: '30%',
   'text-align': 'center',
-  height: '150px'
+  height: '250px'
 }
 const lWindow = {
   background: '#737272',
@@ -77,13 +85,16 @@ class PaintShop extends Component {
   }
 
   render() {
-    console.log(this.props);
+    let time = moment().startOf('day').fromNow().split(" ")[0]
+    time = parseInt(time);
+    console.log(7 > time);
+    console.log(time < 17);
+    let timeOfDay = 7 < time && time < 17 ? daytime : nighttime;
+    console.log(timeOfDay,'tod');
     let color = this.props.color;
-    console.log(this.state);
     return (
       <div className="" style={{'margin-left': '10%'}}>
         <div id="roof">
-          <h1 style={{color: '#76FF03'}}>George's Paint Shop</h1>
           <div id="depth" style={{
             // transform: 'rotateX(90deg) translateZ(1em)',
             // position: 'absolute',
@@ -96,7 +107,7 @@ class PaintShop extends Component {
             'line-height': '2em',
             background: `repeating-linear-gradient(to right, black, black 50px, ${color} 50px, ${color} 100px)`
           }}>
-             Top
+
           </div>
           {/* <div style={{background: 'orange',height: '50px'}}></div> */}
           <div style={{
@@ -108,7 +119,7 @@ class PaintShop extends Component {
         </div>
         <div>
           <div style={{
-            background: 'silver',
+            background: 'url("https://image.freepik.com/free-photo/brick-wall-texture-background_1137-89.jpg")',
             margin: '0 2%',
             height: '30%',
             width: '550px'
@@ -119,35 +130,36 @@ class PaintShop extends Component {
               </div> */}
             </div>
             <div className="row" style={{...row,'display': 'flex'}}>
-              <div style={update}><p>Paints</p></div>
-              <div style={update}><p>Brushes</p></div>
-              <div style={update}><p>Tape</p></div>
+              <div style={{...update, ...timeOfDay}}><p>Paints</p></div>
+              <div style={{...update, ...timeOfDay}}><p>Brushes</p></div>
+              <div style={{...update, ...timeOfDay}}><p>Tape</p></div>
             </div>
             <div style={{height: '30', 'margin-top': '2%',}}>
             </div>
             <div className="row" style={{...row,'display': 'flex'}}>
-              <div style={door}><p>Welcome</p></div>
-              <div style={lWindow}>Tape</div>
+              <div style={door}></div>
+              <div style={{...lWindow, ...timeOfDay}}>
+                <h3>George's Paint Shop</h3>
+              </div>
             </div>
-            <h4>{`Now selling ${color} paint`}</h4>
-          <div className="update-mentions">
-            {/* Click here to pull down the latest mentions */}
-            {/* Display only if there are pending mentions */}
-            <button className="pending" onClick={this.updateMentions}> Change Paint</button>
-            <select
-              name="paintChanger"
-              id=""
-              onChange={this.changePaint}
-              >
-              <option value="red">Red</option>
-              <option value="blue">Blue</option>
-            </select>
-          </div>
           {/* {this.state.mentions.map((mention, i) => {
             return <Mention key={i} mention={mention} />
+            {color: '#76FF03'}
             })
          } */}
          </div>
+       </div>
+       <div className="update-mentions">
+         <h4>{`Now selling ${color} paint`}</h4>
+         <button className="pending" onClick={this.updateMentions}> Change Paint</button>
+         <select
+           name="paintChanger"
+           id=""
+           onChange={this.changePaint}
+           >
+           <option value="red">Red</option>
+           <option value="blue">Blue</option>
+         </select>
        </div>
        {/* <div className="cube" style={cube}>
          <div id="depth" style={{
