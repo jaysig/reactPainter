@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
+import moment from 'moment';
 // import { Field, reduxForm } from 'redux-form'
 // import DropdownList from 'react-widgets/lib/DropdownList'
 import * as actions from '../actions/paints';
@@ -14,6 +15,17 @@ const block = {
 
 }
 
+const sign = {
+  // 'font-size': '3em',
+  // display: 'flex',
+  // 'justify-content': 'right',
+  'margin-left': '30%',
+  width: '40%',
+  background: '#666',
+  'text-shadow': '0px 1px 0px rgba(255,255,255,.5)',
+  opacity: '30%'
+}
+
 const cube = {
   'font-size': '3em',
   width: '2em',
@@ -23,6 +35,8 @@ const cube = {
 }
 const row = {
   margin: '10px',
+  'font-family': 'Lato, sans-serif',
+  'margin-left': '10%',
   width: '400px',
   'justify-content': 'space-between'
 }
@@ -30,9 +44,10 @@ const update = {
   background: '#737272',
   color: 'white',
   border: 'orange solid 2px',
-  width: '70px',
+  width: '25%',
+  padding: '1%',
   'text-align': 'center',
-  height: '20px'
+  height: '40px'
 }
 const door = {
   background: '#737272',
@@ -66,8 +81,8 @@ class PaintShop extends Component {
     let color = this.props.color;
     console.log(this.state);
     return (
-      <div className="">
-        <div style={{margin: '10%'}}>
+      <div className="" style={{'margin-left': '10%'}}>
+        <div id="roof">
           <h1 style={{color: '#76FF03'}}>George's Paint Shop</h1>
           <div id="depth" style={{
             // transform: 'rotateX(90deg) translateZ(1em)',
@@ -89,26 +104,9 @@ class PaintShop extends Component {
             transform: 'translateZ(1em)',
             background: `repeating-linear-gradient(to right, black, black 50px, ${color} 50px, ${color} 100px)`
           }}>
-          Bottom
           </div>
-          {/* <div className="cube" style={cube}>
-            <div id="depth" style={{
-              ...block,
-              transform: 'rotateX(90deg) translateZ(1em)',
-              background: `repeating-linear-gradient(to right, white, white 50px, ${color} 50px, ${color} 100px)`
-            }}>
-               Top
-            </div>
-            <div style={{
-              ...block,
-              transform: 'translateZ(1em)',
-              background: `repeating-linear-gradient(to right, white, white 50px, ${color} 50px, ${color} 100px)`
-            }}>
-            Bottom
-            </div>
-          </div> */}
-
-
+        </div>
+        <div>
           <div style={{
             background: 'silver',
             margin: '0 2%',
@@ -116,17 +114,19 @@ class PaintShop extends Component {
             width: '550px'
           }}>
             <div style={{height: '30', 'margin-top': '2%',}}>
-
+              {/* <div style={sign}>
+                <p><h1 style={{color: '#76FF03'}}>George's Paint Shop</h1></p>
+              </div> */}
             </div>
             <div className="row" style={{...row,'display': 'flex'}}>
-              <div style={update}>Paints</div>
-              <div style={update}>Brushes</div>
-              <div style={update}>Tape</div>
+              <div style={update}><p>Paints</p></div>
+              <div style={update}><p>Brushes</p></div>
+              <div style={update}><p>Tape</p></div>
             </div>
             <div style={{height: '30', 'margin-top': '2%',}}>
             </div>
             <div className="row" style={{...row,'display': 'flex'}}>
-              <div style={door}>Brushes</div>
+              <div style={door}><p>Welcome</p></div>
               <div style={lWindow}>Tape</div>
             </div>
             <h4>{`Now selling ${color} paint`}</h4>
@@ -149,6 +149,22 @@ class PaintShop extends Component {
          } */}
          </div>
        </div>
+       {/* <div className="cube" style={cube}>
+         <div id="depth" style={{
+           ...block,
+           transform: 'rotateX(90deg) translateZ(1em)',
+           background: `repeating-linear-gradient(to right, white, white 50px, ${color} 50px, ${color} 100px)`
+         }}>
+            Top
+         </div>
+         <div style={{
+           ...block,
+           transform: 'translateZ(1em)',
+           background: `repeating-linear-gradient(to right, white, white 50px, ${color} 50px, ${color} 100px)`
+         }}>
+         Bottom
+         </div>
+       </div> */}
       </div>
     )
   }
