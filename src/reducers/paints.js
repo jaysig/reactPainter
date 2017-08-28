@@ -4,12 +4,12 @@ const initialState = {
   color: 'red'
 }
 
-export default(state = initialState, payload) => {
-  switch (payload.type) {
+export default(state = initialState, action) => {
+  switch (action.type) {
     case CHANGE_COLOR:
       return {
         ...state,
-        color: payload.color
+        color: action.color
       }
     default:
       return state;
