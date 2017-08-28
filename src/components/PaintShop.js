@@ -19,15 +19,13 @@ class PaintShop extends Component {
     this.state = {
       owner: 'George'
     }
-    this.handleChange = this.handleChange.bind(this);
-    this.changePaint = this.changePaint.bind(this);
   }
 
   changePaint = (event) => {
     this.props.changeColor(event.target.value);
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
   var value = event.target.value;
 
   this.setState(function () {
@@ -43,7 +41,7 @@ class PaintShop extends Component {
     let owner = this.state.owner;
     let color = this.props.color;
     return (
-      <div className="" style={styles.offsetLeftStyle}>
+      <div style={styles.offsetLeftStyle}>
         <div id="roof">
           <div style={{
             ...styles.slantedBlockStyle,
@@ -56,7 +54,7 @@ class PaintShop extends Component {
           }}>
           </div>
         </div>
-        <div>
+        <div id="building">
           <div style={styles.brickWallStyle}>
             <div style={styles.spacerStyle}>
             </div>
@@ -75,7 +73,7 @@ class PaintShop extends Component {
             </div>
          </div>
        </div>
-       <div style={styles.formStyle}>
+       <div id="changeForm" style={styles.formStyle}>
          <h4>{`Now selling ${color} paint`}</h4>
          <div>
            <p>Change Paint <select
@@ -98,7 +96,6 @@ class PaintShop extends Component {
               value={this.state.owner}
               onChange={this.handleChange}
             />
-
          </div>
        </div>
       </div>
